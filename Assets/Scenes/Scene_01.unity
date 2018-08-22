@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 1407075148}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -818,8 +818,8 @@ GameObject:
   - component: {fileID: 2054149266}
   - component: {fileID: 2054149265}
   - component: {fileID: 2054149269}
-  - component: {fileID: 2054149270}
   - component: {fileID: 2054149271}
+  - component: {fileID: 2054149270}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -922,7 +922,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpfactor: 6.5
-  Gravityfactor: 2
 --- !u!114 &2054149271
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -156,10 +156,6 @@ Prefab:
       propertyPath: m_Name
       value: Jumpers (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4129596687581380, guid: e9124af62ce8e6c4a95fbd21720e95fc, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9124af62ce8e6c4a95fbd21720e95fc, type: 2}
   m_IsPrefabParent: 0
@@ -541,6 +537,10 @@ Prefab:
     - target: {fileID: 4129596687581380, guid: e9124af62ce8e6c4a95fbd21720e95fc, type: 2}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666449587800196, guid: e9124af62ce8e6c4a95fbd21720e95fc, type: 2}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9124af62ce8e6c4a95fbd21720e95fc, type: 2}

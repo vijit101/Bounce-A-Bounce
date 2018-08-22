@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PlayerActor : MonoBehaviour
 {
+    private void OnCollisionEnter(Collision col)
+    {   
+        if (col.gameObject.CompareTag("Ground")) //jump logic 
+        {
+            onground = true;
+        }
+    }
     Rigidbody rgbd;
     [SerializeField] float speed = 5;
-    [SerializeField] float jumpfactor = 5;
-    [SerializeField] float Gravityfactor = 1.5f;
+    [SerializeField] float jumpfactor = 1;
+    bool onground;
     int i = 2;
     private void Awake()
     {
@@ -33,11 +40,11 @@ public class PlayerActor : MonoBehaviour
     }
     private void jumpball()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (onground && Input.GetKey(KeyCode.Space))
         {
-            if (rgbd.velocity.y ==0)
             {
                 rgbd.AddForce(Vector3.up * jumpfactor,ForceMode.Impulse);
+                onground = false;
             }
             /*if (rgbd.velocity.y < 0)
             {
@@ -45,7 +52,7 @@ public class PlayerActor : MonoBehaviour
             }
             if (rgbd.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
             {
-                rgbd.velocity += Vector3.up * Physics.gravity.y * (Gravityfactor)*Time.deltaTime;
+                rgbd.velocity += Vector3.up * Physics.gravity.y * (Gravityfactor)*Time.deltaTime; gravityfactor was a float variable with value 1.5f
             }*/
         }
 
