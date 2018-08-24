@@ -3,31 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Lift : MonoBehaviour {
-    
-    public Camera camz;
-    bool camrot = false;
-    private void OnCollisionStay(Collision collision)
+    bool translate = false;
+    public GameObject cam1;
+    public GameObject cam2;
+    /*AudioListener cama1; // made due to there were two audio listners of cameras but as camera2 is set not active so its ausio listner too not active 
+    AudioListener cama2;*/
+    private void OnCollisionEnter(Collision coll)
     {
-        if (transform.position.y <= 11)
-        {
-            transform.Translate(0, 11 * Time.deltaTime, 0);
-            camrot = true;
-        }
+        translate = true;
     }
     private void Awake()
     {
-        camz = GetComponent<Camera>();
+        cam1.SetActive(true);
+        cam2.SetActive(false);
+        //cama1 = GetComponent<AudioListener>();
+        //cama2 = GetComponent<AudioListener>();
+        
     }
     // Use this for initialization
     void Start () {
-      
+        //cama1.enabled = true;
+        //cama2.enabled = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (camrot)
+        if (translate && transform.position.y <=11)
         {
-            camz.transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.Translate(0, 11 * Time.deltaTime, 0);
+            cam2.SetActive(true);
+            cam1.SetActive(false);
+            //cama1.enabled = false;
         }
+        
+           
 	}
 }
